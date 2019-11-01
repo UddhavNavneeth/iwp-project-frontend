@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import ls from 'local-storage';
 
 class Secret extends Component {
 
@@ -8,11 +9,15 @@ class Secret extends Component {
     };
 
     componentDidMount() {
-        axios.get('http://localhost:8000/api/secret').then((doc) => {
+        let data = {
+            token: ls.get('token')
+        }
+        axios.post('http://localhost:8000/api/secret', data).then((doc) => {
             this.setState({message: doc.data});
             console.log(doc);
         }).catch((e) => {
-            console.log(e);
+            console.log(e.response);
+            this.setState({message: e.response.data});
         })
     }
 

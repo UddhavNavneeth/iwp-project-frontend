@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
 
@@ -10,7 +11,6 @@ class Home extends Component {
     componentDidMount() {
         axios.get('http://localhost:8000/api/home').then((doc) => {
             this.setState({message: doc.data});
-            console.log(doc);
         }).catch((e) => {
             console.log(e);
         })
@@ -20,6 +20,11 @@ class Home extends Component {
         return (
             <div>
                 <h1>{this.state.message}</h1>
+                <ul>
+                    <li><Link to="/posts">Posts</Link></li>
+                    <li><Link to="/users">Users</Link></li>
+                    <li><Link to="/newPost">New Post</Link></li>
+                </ul>
             </div>
         )
     }
