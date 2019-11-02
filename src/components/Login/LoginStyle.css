@@ -1,0 +1,101 @@
+.card {
+    margin-left: 40px !important;
+    margin-right: 40px !important;
+    margin-top: 40px !important;
+    padding-left: 50px !important;
+    padding-bottom: 50px !important;
+    padding-top: 50px !important;
+    padding-right: 50px !important;
+    color: white !important;
+}
+
+.input-field {
+    margin-left: 40px !important;
+    color: white !important;
+}
+
+.btn-large {
+    /* margin-left: 40px !important; */
+    margin-bottom: 40px !important;
+    color: rgb(62, 96, 209) !important;
+}
+
+nav {
+    height: 100px !important;
+}
+
+.brand-logo {
+    padding-left: 50px !important;
+    font-size: 70px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.nav-li {
+    margin-top: 7px !important;
+    font-size: 30px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.nav-li-button {
+    margin-top: 7px !important;
+    font-size: 30px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    /* background-color: rgba(65, 105, 225, 0.712); */
+}
+
+.home-li {
+    font-size: 30px !important;
+    padding-top: 10px !important;
+    color: white !important;
+    text-decoration: underline;
+}
+
+p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 20px;
+}
+
+.post-box {
+    background-color: white;
+    color: black;
+    font-size: 25px;
+    padding-left: 10px;
+    height: 100px;
+}
+
+.titles {
+    margin-left: 40px;
+}
+
+.btn {
+    /* margin-bottom: 40px !important; */
+    color: rgb(62, 96, 209) !important;
+}
+
+.input-box {
+    background-color: white !important;
+    color: black !important;
+    padding: 10px !important;
+    margin-right: 0px !important;
+    width: 80% !important;
+}
+
+.text-area {
+    background-color: white;
+    color: black;
+    font-size: 25px;
+    padding-left: 10px;
+    height: 200px;
+    resize: none;
+}
+
+::placeholder {
+    color: rgba(32, 30, 30, 0.74);
+}

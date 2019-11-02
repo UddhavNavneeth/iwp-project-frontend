@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ls from 'local-storage';
+import './LoginStyle.css';
 // import { Redirect } from 'react-router-dom';
 
 //https://iwp-backend-ud.herokuapp.com/
@@ -86,30 +88,51 @@ export default class Login extends Component {
         }
 
     return (
-        <div>
-            <form onSubmit={this.onSubmit}>
-                <h1>Login Below!</h1>
-                <input
-                type="text"
-                name="username"
-                placeholder="Enter Username"
-                value={this.state.email}
-                onChange={this.handleInputChange}
-                required
-                />
-                <input
-                type="password"
-                name="password"
-                placeholder="Enter Password"
-                value={this.state.password}
-                onChange={this.handleInputChange}
-                required
-                />
-            <input type="submit" value="Submit"/>
-            </form>
+      <div>
+                <nav>
+                        <div class="nav-wrapper light-blue accent-4">
+                            <Link to="/" class="brand-logo">Express</Link>
+                            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                                <li><Link to="/signup" class="nav-li-button">Sign Up</Link></li>
+                                <li><Link to="#" class="nav-li"></Link></li>
+                                <li><Link to="#" class="nav-li"></Link></li>
+                            </ul>
+                        </div>
+                </nav>
+
+
+          <div class="card light-blue accent-4">
+            <div class="input-field col s6">
+              <form onSubmit={this.onSubmit}>
+                  <h1>Login Below!</h1>
+                  <input
+                  type="text"
+                  name="username"
+                  placeholder="Enter Username"
+                  value={this.state.email}
+                  onChange={this.handleInputChange}
+                  class="input-box"
+                  required
+                  />
+                  <input
+                  type="password"
+                  name="password"
+                  placeholder="Enter Password"
+                  value={this.state.password}
+                  onChange={this.handleInputChange}
+                  class="input-box"
+                  required
+                  />
+                  <br></br>
+                  <input type="submit" value="Submit" class="white btn-large"/>
+              </form>
+            </div>
+            
             {errormsg}
 
         </div>
+
+      </div>
       
     );
   }

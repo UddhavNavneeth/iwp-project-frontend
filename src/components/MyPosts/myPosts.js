@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ls from 'local-storage';
 
-class Posts extends Component {
+class MyPosts extends Component {
 
     state = {
         posts: [{message:'..no new posts', owner:''}]
@@ -17,34 +17,12 @@ class Posts extends Component {
         let data = {
             token: ls.get('token')
         }
-        axios.post('http://localhost:8000/getPosts', data).then((doc) => {
+        axios.post('http://localhost:8000/getMyPosts', data).then((doc) => {
             this.setState({posts: doc.data});
             // console.log(doc);
         }).catch((e) => {
             console.log(e.response);
             this.setState({message: e.response.data});
-        })
-    }
-
-    handleLike = (id) => {
-        let data = {
-            id: id,
-            token: ls.get('token')
-        }
-        axios.post('http://localhost:8000/addLike', data).then(() => {
-            let data2 = {
-                token: ls.get('token')
-            }
-            // console.log('success');
-            axios.post('http://localhost:8000/getPosts', data2).then((doc) => {
-            this.setState({posts: doc.data});
-            // console.log(doc);
-            }).catch((e) => {
-                console.log(e.response);
-                this.setState({message: e.response.data});
-            })
-        }).catch((e) => {
-            console.log(e);
         })
     }
 
@@ -78,8 +56,7 @@ class Posts extends Component {
                             <div class="post-box">
                                 {post.message}
                             </div>
-                            <p><b>By:</b> {post.owner} <b>Likes:</b> {post.likes}</p>
-                            <button class="white btn" onClick={() => this.handleLike(post._id)}>Like</button>
+                            <p><b>Likes:</b> {post.likes}</p>
                         </div>
 
                     )
@@ -89,4 +66,4 @@ class Posts extends Component {
     }
 }
 
-export default Posts;
+export default MyPosts;

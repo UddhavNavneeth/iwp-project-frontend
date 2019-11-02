@@ -7,6 +7,7 @@ import Signup from './components/Signup/signup';
 import Posts from './components/Posts/posts';
 import Users from './components/Users/users';
 import NewPost from './components/NewPost/newPost';
+import MyPosts from './components/MyPosts/myPosts';
 
 import withAuth from './withAuth';
 import './App.css';
@@ -23,12 +24,12 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <ul>
+        {/* <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/secret">Secret</Link></li>
           <li><Link to="/login">Login</Link></li>
           <li><Link to="/signup">Signup</Link></li>
-        </ul>
+        </ul> */}
         
           <Route exact path="/" component={Home} />
           <Route path="/secret" component={withAuth(Secret)} />
@@ -37,6 +38,7 @@ class App extends Component {
           <Route path="/posts" component={withAuth(Posts)} />
           <Route path="/users" component={withAuth(Users)} />
           <Route path="/newPost" component={withAuth(NewPost)} />
+          <Route path="/myPosts" component={withAuth(MyPosts)} />
         
         </Router>
     )
